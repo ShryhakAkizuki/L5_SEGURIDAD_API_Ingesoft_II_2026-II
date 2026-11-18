@@ -1,0 +1,1 @@
+# L5_SEGURIDAD_API_Ingesoft_II_2026-II-
