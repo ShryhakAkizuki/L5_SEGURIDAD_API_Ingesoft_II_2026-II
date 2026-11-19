@@ -52,15 +52,13 @@ For the client, it is necessary to import the previously created `seii.crt`. to 
 ```Shell
 keytool -importcert -alias seii -file seii.crt -keystore confianza.p12 -storetype PKCS12 -noprompt
 ```
-
-Then store the certificate using 
+It asks for a password, use the one previously created and stored in the environmental variable. Then store the certificate using:
 
 ``` Shell
-java -Djavax.net.ssl.trustStore=confianza.p12   -Djavax.net.ssl.trustStorePassword="contrasena"   
--cp target/classes:target/dependency/*  com.ejercicio3d.demo.Main
+java -Djavax.net.ssl.trustStore=confianza.p12   -Djavax.net.ssl.trustStorePassword="contrasena" -cp target/classes:target/dependency/*  com.ejercicio3d.demo.Main
 ```
 
-In our case, to properly run the client, it was necessary for the dependencies to be stored meaning to compile it, we used 
+In our case, to properly run the client, it was necessary for the dependencies to be stored meaning to compile it, we used: 
 
 ```Shell
 ./mvnw compile dependency:copy-dependencies
