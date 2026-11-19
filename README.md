@@ -38,7 +38,7 @@ $env:KEYSTORE_PASSWORD = "your_actual_key"
 export KEYSTORE_PASSWORD="your_actual_key"
 ```
 
-Then run 
+Then run
 
 ``` Shell
 keytool -exportcert -alias seii -keystore src/main/resources/keystore.p12 -rfc -file seii.crt
@@ -47,7 +47,7 @@ That command generates `seii.crt`.
 
 ## Client
 
-For the client, it is necessary to import the previously created `seii.crt`. to do so, use the following command
+For the client, it is necessary to import the previously created `seii.crt`. To do so, use the following command
 
 ```Shell
 keytool -importcert -alias seii -file seii.crt -keystore confianza.p12 -storetype PKCS12 -noprompt
@@ -57,8 +57,10 @@ It asks for a password, use the one previously created and stored in the environ
 ``` Shell
 java -Djavax.net.ssl.trustStore=confianza.p12   -Djavax.net.ssl.trustStorePassword="contrasena" -cp target/classes:target/dependency/*  com.ejercicio3d.demo.Main
 ```
+Where `trustStorePassword` is, again, the password creatd before.
 
-In our case, to properly run the client, it was necessary for the dependencies to be stored meaning to compile it, we used: 
+#### Extra
+In our case, to properly run the client, it was necessary for the dependencies to be stored in the `dependencies/` directory, meaning, to compile it we used: 
 
 ```Shell
 ./mvnw compile dependency:copy-dependencies
