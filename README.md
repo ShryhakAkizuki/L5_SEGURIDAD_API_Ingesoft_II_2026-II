@@ -1,4 +1,4 @@
-8 # Laboratorio 5 - Seguridad en APIs
+# Laboratorio 5 - Seguridad en APIs
 
 Entrega del Laboratorio 5 del curso **Ingeniería de software II** (2026-II).
 
